@@ -11,9 +11,18 @@ const PROVIDER_SCHEMAS: Record<string, Record<string, string[]>> = {
     AWS_SES: ['accessKeyId', 'secretAccessKey', 'region', 'from'],
     SENDGRID: ['apiKey', 'from'],
   },
-  SMS: {
+SMS: {
     FAST2SMS: ['apiKey'],
-    MSG91: ['authKey', 'templateId'],
+    MSG91: [
+      'authKey', 
+      'templateId', // Default (OTP)
+      'template_order_placed', 
+      'template_order_confirmed', 
+      'template_order_shipped', 
+      'template_order_delivered', 
+      'template_order_cancelled'
+    ],
+    TWILIO: ['accountSid', 'authToken', 'fromNumber'],
   },
   PAYMENT: {
     RAZORPAY: ['key_id', 'key_secret'],
