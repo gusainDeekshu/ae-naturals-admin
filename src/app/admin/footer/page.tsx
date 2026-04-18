@@ -120,12 +120,23 @@ export default function FooterManager() {
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
   );
 
-  useEffect(() => {
+useEffect(() => {
     Promise.all([
       adminFooterService.getFooter(),
       adminPagesService.getAllPages()
     ]).then(([footerRes, pagesRes]) => {
-      setColumns(footerRes.columns || []);
+      
+      // 🔥 THE FIX: Sanitize the incoming data to guarantee every item has an ID
+      const safeColumns = (footerRes?.columns || []).map((col: any, cIdx: number) => ({
+        ...col,
+        id: col.id || `col-${cIdx}-${Date.now()}`,
+        links: (col.links || []).map((link: any, lIdx: number) => ({
+          ...link,
+          id: link.id || `link-${cIdx}-${lIdx}-${Date.now()}`
+        }))
+      }));
+
+      setColumns(safeColumns);
       setPages(pagesRes.filter((p: any) => p.isPublished) || []);
       setLoading(false);
     }).catch((err) => {
