@@ -4,9 +4,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ThemeSection } from "./page";
+
 import { X, Upload, Loader2, Image as ImageIcon, Plus, Trash2 } from "lucide-react";
 import { CldUploadWidget } from "next-cloudinary";
+import { ThemeSection } from "@/lib/validators/storefront";
 
 interface Props {
   isOpen: boolean;
