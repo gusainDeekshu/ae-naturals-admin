@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { signOut } from 'next-auth/react';
-import { LayoutDashboard, ShoppingBag, Package, Settings, LogOut, Menu, X, Tags, Sparkles, Layers, FileText, ListTree, LayoutTemplate, PanelBottom } from 'lucide-react';
+import { LayoutDashboard, ShoppingBag, Package, Settings, LogOut, Menu, X, Tags, Sparkles, Layers, FileText, ListTree, LayoutTemplate, PanelBottom, Store } from 'lucide-react';
 import { useAuthStore } from '@/store/authStore';
 
 export const Sidebar = () => {
@@ -27,6 +27,7 @@ export const Sidebar = () => {
     { href: '/admin/menus', icon: ListTree, label: "Navigation" },
     { href: '/admin/pages', icon: LayoutTemplate, label: "Pages" },
     { href: '/admin/footer', icon: PanelBottom, label: "Footer" },
+    { href: '/admin/storefront', icon: Store, label: "Storefront Builder" },
     { href: '/admin/features', icon: Sparkles, label: "Highlights" },
     { href: '/admin/config', icon: Settings, label: "General Config" },
   ];
