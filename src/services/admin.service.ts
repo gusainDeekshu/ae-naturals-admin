@@ -23,7 +23,10 @@ export const adminService = {
     apiClient.put(`/admin/store/config/${slug}`, config),
   // 🔥 NEW: Storefront CMS (Theme Config) APIs
   getStores: () => apiClient.get('/admin/stores'), // Used to get the Store ID
-  getHomepageData: () => apiClient.get('/admin/stores/home'), // Gets current config
+  // 🔥 FIX: Added explicit headers to prevent the browser from caching the layout
+  getHomepageData: () => apiClient.get('/admin/stores/home'),
   updateThemeConfig: (storeId: string, payload: { sectionsOrder: any[] }) => 
     apiClient.patch(`/admin/stores/${storeId}/theme`, payload),
 };
+
+
