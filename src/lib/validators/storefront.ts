@@ -15,7 +15,7 @@ export const ThemeSectionSchema = z.object({
     "BLOG_SECTION",
   ]),
   isActive: z.boolean().default(true),
-  settings: z.record(z.any()).default({}), // Can be strictly typed per block later
+  settings: z.record(z.string(), z.any()).default({}), // Can be strictly typed per block later
 });
 
 export const StorefrontLayoutSchema = z.object({

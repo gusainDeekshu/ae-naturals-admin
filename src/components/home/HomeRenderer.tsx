@@ -9,7 +9,7 @@ import { ProductCarousel } from "./ProductCarousel";
 import { PromotionalBanner } from "./PromotionalBanner";
 import { TrustTicker } from "./TrustTicker";
 import { BrandStory } from "./BrandStory";
-import HomeBlogSection from "./HomeBlogSection";
+import {HomeBlogSection} from "./HomeBlogSection";
 import { CollectionsShowcase } from "./CollectionsShowcase";
 import { FeaturedProducts } from "./FeaturedProducts";
 
