@@ -16,6 +16,9 @@ export const PromotionalBanner = ({ settings }: any) => {
     );
   }
 
+  const subtitle =
+    settings?.subtitle || "Limited time deal. Don’t miss out.";
+
   return (
     <div className="w-full h-[180px] md:h-[220px] relative rounded-2xl overflow-hidden shadow-sm group">
       
