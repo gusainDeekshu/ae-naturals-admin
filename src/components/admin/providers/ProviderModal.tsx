@@ -245,6 +245,33 @@ const PROVIDER_SCHEMAS: ProviderSchema = {
     note: "Enable this only for live transactions. Keep disabled while testing in sandbox mode.",
   },
 ],
+CASHFREE: [
+      {
+        key: 'app_id',
+        placeholder: 'Enter App ID',
+        note: 'Get this from your Cashfree Merchant Dashboard → Developers/API Keys.',
+      },
+      {
+        key: 'secret_key',
+        placeholder: 'Enter Secret Key',
+        note: 'Secret key provided by Cashfree for API authentication.',
+      },
+      {
+        key: 'env',
+        placeholder: 'sandbox or production',
+        note: 'Type "sandbox" for testing or "production" for live transactions.',
+      },
+      {
+        key: 'frontend_url',
+        placeholder: 'https://yourdomain.com',
+        note: 'Customer-facing website URL where users are redirected after payment.',
+      },
+      {
+        key: 'backend_webhook_url',
+        placeholder: 'https://api.yourdomain.com/api/v1',
+        note: 'Public backend endpoint to receive Cashfree webhooks (e.g., https://api.yourdomain.com/api/v1).',
+      },
+    ],
   },
 
   SHIPPING: {
