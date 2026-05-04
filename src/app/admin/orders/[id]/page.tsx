@@ -15,6 +15,7 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+import { AdminTrackingLogs } from "../AdminTrackingLogs";
 
 // 🔥 FOOLPROOF FETCHER
 const fetcher = async (url: string) => {
@@ -285,6 +286,8 @@ export default function AdminOrderDetailsPage({
           </div>
         </div>
       </div>
+      {/* NEW: Drop the Tracking Logs Component here */}
+  <AdminTrackingLogs orderId={order.id} currentStatus={order.status} />
 
       {/* 🔥 The Cancel Modal */}
       <CancelOrderModal 
